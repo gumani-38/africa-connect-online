@@ -1,0 +1,23 @@
+{
+  "build": {
+    "preview": {
+      "android": {
+        "buildType": "app-bundle"
+      },
+      "env": {
+        "EXPO_PUBLIC_SUPABASE_URL": "https://enncirtrqpyqibdbdwwr.supabase.co",
+        "EXPO_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVubmNpcnRycXB5cWliZGJkd3dyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTc2NjQ4ODksImV4cCI6MjAzMzI0MDg4OX0.zZNlL4TNnWsrOwvGaVtou49oVbNVLOHEahHsMSey2lo",
+        "EXPO_PUBLIC_SUPABASE_SERVICES_ROLE": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVubmNpcnRycXB5cWliZGJkd3dyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcxNzY2NDg4OSwiZXhwIjoyMDMzMjQwODg5fQ.re_rT2BmGkgVbgEWfUifUuj6HrEHd_sHeetTptPRsfM"
+      }
+    },
+    "preview2": {
+      "android": {
+        "gradleCommand": ":app:assembleRelease"
+      }
+    },
+    "preview3": {
+      "developmentClient": true
+    },
+    "production": {}
+  }
+}
