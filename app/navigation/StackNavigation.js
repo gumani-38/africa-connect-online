@@ -188,12 +188,6 @@ const StackNavigation = () => {
         />
 
         <Stack.Screen
-          name="ForgotVerify"
-          component={ForgotVerifyScreen}
-          options={{ headerShown: false }}
-        />
-
-        <Stack.Screen
           name="ResetPassword"
           component={ResetPasswordScreen}
           options={{ headerShown: false }}

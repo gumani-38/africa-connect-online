@@ -77,8 +77,7 @@ const ForgotScreen = () => {
         if (error) {
           throw error;
         }
-        console.log("Token inserted successfully");
-        navigation.navigate("ForgotVerify", { userId: userId, email: email });
+        navigation.navigate("ResetPassword", { userId: userId, email: email });
       }
     } catch (error) {
       console.log("error while inserting token : ", error.message);

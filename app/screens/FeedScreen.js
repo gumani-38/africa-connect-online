@@ -128,7 +128,6 @@ const FeedScreen = () => {
 
   return (
     <>
-      <PushNotification />
       <View style={styles.container}>
         <FlatList
           data={posts}
