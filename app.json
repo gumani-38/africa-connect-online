@@ -23,8 +23,7 @@
         "backgroundColor": "#ffffff"
       },
       "permissions": ["android.permission.RECORD_AUDIO"],
-      "package": "com.yourcompany.acoapp",
-      "googleServicesFile": "./android/app/google-services.json"
+      "package": "com.yourcompany.acoapp"
     },
     "web": {
       "favicon": "./app/assets/favicon.png"

@@ -20,7 +20,6 @@ import LoginScreen from "../screens/LoginScreen";
 import RegisterScreen from "../screens/RegisterScreen";
 import TermsScreen from "../screens/TermsScreen";
 import ForgotScreen from "../screens/ForgotScreen";
-import ForgotVerifyScreen from "../screens/ForgotVerifyScreen";
 import MyPostScreen from "../screens/MyPostScreen";
 import UpdatePostScreen from "../screens/UpdatePostScreen";
 import ResetPasswordScreen from "../screens/ResetPasswordScreen";
