@@ -151,30 +151,11 @@ const ViewProfileScreen = () => {
         throw error;
       }
       setContactMessage(null);
-      await sendPushNotification(userProfile.expo_push_token);
     } catch (error) {
       console.log("while sending the contact message : ", error.message);
     }
   };
-  async function sendPushNotification(expoPushToken) {
-    const message = {
-      to: expoPushToken,
-      sound: "default",
-      title: "Surprise",
-      body: "app push notification",
-      data: { someData: "goes here" },
-    };
 
-    await fetch("https://exp.host/--/api/v2/push/send", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Accept-encoding": "gzip, deflate",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(message),
-    });
-  }
   const handleConnectClick = async () => {
     try {
       if (isConnected) {

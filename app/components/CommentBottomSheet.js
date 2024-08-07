@@ -24,7 +24,6 @@ const CommentBottomSheet = ({ isVisible, handleCloseModal, postId }) => {
   const [commentId, setCommentId] = useState(null);
   const [username, setUsername] = useState(null);
   const [postCaptions, setPostCaptions] = useState(null);
-  const [authorToken, setAuthorToken] = useState(null);
   const commentInputRef = useRef(null);
   const [userId, setUserId] = useState("");
   const getUser = async () => {
@@ -52,7 +51,6 @@ const CommentBottomSheet = ({ isVisible, handleCloseModal, postId }) => {
       if (error) {
         throw error;
       }
-      setAuthorToken(data.profiles.expo_push_token);
       setPostCaptions(data.caption);
     } catch (error) {
       console.log("error getting user post author :", error.message);
@@ -125,10 +123,6 @@ const CommentBottomSheet = ({ isVisible, handleCloseModal, postId }) => {
         }
 
         getComments();
-        await sendPushNotification(
-          authorToken,
-          `a new comment on your post with a caption of ${postCaptions} `
-        );
       } else {
         const { data, error } = await supabase.from("replies").insert({
           media: uri,
@@ -142,10 +136,6 @@ const CommentBottomSheet = ({ isVisible, handleCloseModal, postId }) => {
         setCommentId(null);
         setUsername(null);
         getComments();
-        await sendPushNotification(
-          authorToken,
-          `a new comment on your post with a caption of ${postCaptions} `
-        );
       }
     } catch (error) {
       console.log("error while inserting media comment :", error.message);
@@ -181,25 +171,7 @@ const CommentBottomSheet = ({ isVisible, handleCloseModal, postId }) => {
       console.log("error while replying to comment :", error.message);
     }
   };
-  async function sendPushNotification(expoPushToken, text) {
-    const message = {
-      to: expoPushToken,
-      sound: "default",
-      title: "New Comment",
-      body: text,
-      data: { someData: "goes here" },
-    };
 
-    await fetch("https://exp.host/--/api/v2/push/send", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Accept-encoding": "gzip, deflate",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(message),
-    });
-  }
   const renderItem = ({ item }) => (
     <Comment
       username={item.profiles.username}

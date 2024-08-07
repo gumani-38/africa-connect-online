@@ -204,8 +204,6 @@ const AddGroupScreen = () => {
         throw error;
       }
       addUserToGroup(data.id);
-      sendMessage();
-
       setTimeout(() => {
         setLoading(false);
         setProgress(0);
@@ -219,43 +217,6 @@ const AddGroupScreen = () => {
       console.log("Error creating group", err.message);
     }
   };
-  const sendMessage = async () => {
-    try {
-      const { data, error } = await supabase.from("profiles").select("*");
-      if (error) {
-        throw error;
-      }
-      for (let i = 0; i < data.length; i++) {
-        if (data[i].expo_push_token) {
-          await sendPushNotification(
-            data[i].expo_push_token,
-            `${name}. its mission or purpose is : ${description}`
-          );
-        }
-      }
-    } catch (error) {
-      console.log("Error sending push notification", error.message);
-    }
-  };
-  async function sendPushNotification(expoPushToken, text) {
-    const message = {
-      to: expoPushToken,
-      sound: "default",
-      title: "New Group Added",
-      body: text,
-      data: { someData: "goes here" },
-    };
-
-    await fetch("https://exp.host/--/api/v2/push/send", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Accept-encoding": "gzip, deflate",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(message),
-    });
-  }
 
   return (
     <>
