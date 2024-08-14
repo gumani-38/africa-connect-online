@@ -10,13 +10,7 @@ import {
   Text,
   View,
 } from "react-native";
-import React, {
-  useCallback,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import {
   FontAwesome,
   Feather,
@@ -356,16 +350,18 @@ const ProfileScreen = () => {
                 >
                   {userProfile?.username}
                 </Text>
-                <Text
-                  style={{
-                    fontSize: 13,
-                    fontWeight: "600",
-                    color: "#9F9F9F",
-                    textAlign: "center",
-                  }}
-                >
-                  Gender: {userProfile?.gender}
-                </Text>
+                {userProfile?.profile_type === 1 && (
+                  <Text
+                    style={{
+                      fontSize: 13,
+                      fontWeight: "600",
+                      color: "#9F9F9F",
+                      textAlign: "center",
+                    }}
+                  >
+                    Gender: {userProfile?.gender}
+                  </Text>
+                )}
               </View>
             </View>
             <View

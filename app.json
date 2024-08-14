@@ -2,7 +2,7 @@
   "expo": {
     "name": "africa connect online",
     "slug": "africa-connect-online",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
     "userInterfaceStyle": "light",
@@ -23,7 +23,8 @@
         "backgroundColor": "#ffffff"
       },
       "permissions": ["android.permission.RECORD_AUDIO"],
-      "package": "com.yourcompany.acoapp"
+      "package": "com.yourcompany.acoapp",
+      "versionCode": 2
     },
     "web": {
       "favicon": "./app/assets/favicon.png"

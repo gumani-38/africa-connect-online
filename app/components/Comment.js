@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
   },
   commentText: {
     fontWeight: "300",
-    fontSize: 10,
+    fontSize: 12,
     color: "black",
   },
   mediaButton: {

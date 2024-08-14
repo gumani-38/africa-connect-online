@@ -12,8 +12,8 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import React, { useContext, useEffect, useState } from "react";
-import { FontAwesome, Feather, FontAwesome5 } from "@expo/vector-icons";
+import React, { useEffect, useState } from "react";
+import { FontAwesome, FontAwesome5 } from "@expo/vector-icons";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { useNavigation } from "@react-navigation/native";
 import * as ImagePicker from "expo-image-picker";

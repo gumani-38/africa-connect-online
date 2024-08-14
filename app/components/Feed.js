@@ -1,12 +1,12 @@
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { Text, View, Pressable, StyleSheet, Image, Share } from "react-native";
 import { FontAwesome, AntDesign, Feather } from "@expo/vector-icons";
 import { formatDistanceToNow, parseISO } from "date-fns";
 import FeedMedia from "./FeedMedia";
 import { supabase } from "../utils/supabase";
 
-const Feed = ({ item, userId, handleConnectClick, handlePresentModal }) => {
+const Feed = ({ item, userId, handlePresentModal }) => {
   const [likeCounts, setLikeCounts] = useState(0);
   const [isConnected, setIsConneted] = useState(false);
   const [connectionId, setConnectionId] = useState(null);
@@ -256,7 +256,7 @@ const Feed = ({ item, userId, handleConnectClick, handlePresentModal }) => {
           onPress={() => handlePresentModal(item.id)}
           style={styles.actionButton}
         >
-          {commentCounts > 1 && (
+          {commentCounts >= 1 && (
             <Text style={{ fontSize: 13, marginRight: 3 }}>
               {" "}
               {commentCounts}
@@ -365,8 +365,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   caption: {
-    fontSize: 12,
-    color: "gray",
+    fontSize: 13,
+    color: "black",
     fontWeight: "600",
     marginVertical: 4,
   },

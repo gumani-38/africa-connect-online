@@ -191,7 +191,7 @@ const MyPostScreen = () => {
             <Entypo name="chevron-left" size={24} color="white" />
           </View>
         </Pressable>
-        <Text style={{ fontSize: 16, fontWeight: "bold" }}>My Post</Text>
+        <Text style={{ fontSize: 16, fontWeight: "bold" }}>Manage Posts</Text>
         <Image
           source={require("../assets/aco-logo.png")}
           style={{

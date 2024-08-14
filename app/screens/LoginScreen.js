@@ -110,7 +110,7 @@ const LoginScreen = () => {
         setProgress(0);
         setShowSuccess(true);
         setTimeout(() => {
-          navigation.navigate("Main");
+          navigation.navigate("Setup");
           setShowSuccess(false);
         }, 300);
       }, 300);
