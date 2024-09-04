@@ -61,7 +61,10 @@ const SearchScreen = () => {
             <Entypo name="chevron-left" size={32} color="white" />
           </View>
         </Pressable>
-        <Image source={require("../assets/aco-logo.png")} style={styles.logo} />
+        <Image
+          source={require("../assets/afro-connect.png")}
+          style={styles.logo}
+        />
       </View>
 
       <View style={styles.searchContainer}>

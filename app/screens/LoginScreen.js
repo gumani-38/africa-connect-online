@@ -34,7 +34,7 @@ const LoginScreen = () => {
   });
   useEffect(() => {
     getUser();
-  }, []);
+  }, [user]);
   const getUser = async () => {
     const {
       data: { user },
@@ -42,7 +42,7 @@ const LoginScreen = () => {
     setUserId(user.id);
   };
   if (userId) {
-    navigation.replace("Main");
+    navigation.replace("Setup");
     return;
   }
   const textInputChange = (val) => {
@@ -129,7 +129,7 @@ const LoginScreen = () => {
           <Animatable.View style={{ marginTop: 20 }}>
             <View style={{ alignItems: "center" }}>
               <Image
-                source={require("../assets/aco-logo.png")}
+                source={require("../assets/afro-connect.png")}
                 style={{ width: 150, height: 150, resizeMode: "contain" }}
               />
             </View>

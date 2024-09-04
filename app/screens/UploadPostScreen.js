@@ -347,7 +347,7 @@ const UploadPostScreen = () => {
                   }}
                   value={tags}
                   onChangeText={(text) => setTags(text)}
-                  placeholder="enter tags (optional)"
+                  placeholder="enter tags (optional and do not include the #)"
                   placeholderTextColor={"#9F9F9F"}
                 />
                 <Text

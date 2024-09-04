@@ -157,7 +157,6 @@ const CommentBottomSheet = ({ isVisible, handleCloseModal, postId }) => {
       commentInputRef.current.focus();
       setCommentId(commentId);
       setUsername(username);
-      console.log("comment: " + commentId);
     } catch (error) {
       console.log("error while replying to comment :", error.message);
     }
@@ -197,11 +196,8 @@ const CommentBottomSheet = ({ isVisible, handleCloseModal, postId }) => {
         if (error) {
           throw error;
         }
+        setComment(null);
         getComments();
-        await sendPushNotification(
-          authorToken,
-          `a new comment on your post with a caption of ${postCaptions} `
-        );
       } else {
         const { data, error } = await supabase.from("replies").insert({
           message: comment,
@@ -211,6 +207,7 @@ const CommentBottomSheet = ({ isVisible, handleCloseModal, postId }) => {
         if (error) {
           throw error;
         }
+        setComment(null);
         setCommentId(null);
         setUsername(null);
         getComments();

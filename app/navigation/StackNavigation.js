@@ -76,7 +76,7 @@ const StackNavigation = () => {
     return (
       <Tab.Navigator screenOptions={{ headerShadowVisible: false }}>
         <Tab.Screen
-          name="Africa Connect Online"
+          name="Afro Connect"
           component={TopTabsGroup}
           options={{
             headerRight: () => (
@@ -97,7 +97,7 @@ const StackNavigation = () => {
             ),
             headerLeft: () => (
               <Image
-                source={require("../assets/aco-logo.png")}
+                source={require("../assets/afro-connect.png")}
                 style={{
                   width: 50,
                   height: 50,

@@ -147,7 +147,7 @@ const ViewPostScreen = () => {
             </View>
           </Pressable>
           <Image
-            source={require("../assets/aco-logo.png")}
+            source={require("../assets/afro-connect.png")}
             style={{
               width: 50,
               height: 50,

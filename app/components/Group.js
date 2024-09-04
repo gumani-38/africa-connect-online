@@ -83,7 +83,9 @@ const Group = ({ image, name, description, id, userId, handleJoinClick }) => {
               borderRadius: 3,
               resizeMode: "cover",
             }}
-            source={image ? { uri: image } : require("../assets/aco-logo.png")}
+            source={
+              image ? { uri: image } : require("../assets/afro-connect.png")
+            }
           />
           <View style={{ flex: 1 }}>
             <Text style={{ fontWeight: "600", fontSize: 13 }}>{name}</Text>

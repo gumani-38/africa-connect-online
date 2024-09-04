@@ -29,7 +29,7 @@ const WelcomeScreen = () => {
           }}
         >
           <Image
-            source={require("../assets/aco-logo.png")}
+            source={require("../assets/afro-connect.png")}
             style={{ width: 300, height: 300, resizeMode: "contain" }}
           />
         </View>
@@ -65,8 +65,7 @@ export default WelcomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F8F8F8",
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-    backgroundColor: "#001138",
+    backgroundColor: "white",
   },
 });

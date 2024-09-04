@@ -236,7 +236,7 @@ const Feed = ({ item, userId, handlePresentModal }) => {
 
       <View style={styles.content}>
         <Text style={styles.caption}>{item.caption}</Text>
-        <View style={{ flexDirection: "row", gap: 1 }}>
+        <View style={{ flexDirection: "row", gap: 1, flexWrap: "wrap" }}>
           {tags.length > 0 &&
             tags.map((tag, index) => (
               <Pressable key={tag.id}>
