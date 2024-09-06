@@ -110,21 +110,23 @@ const UploadPostScreen = () => {
   };
   const uploadTags = async (postId) => {
     try {
-      const { data, error } = await supabase
-        .from("tags")
-        .insert([
-          ...tags
-            .split(",")
-            .map((tag) => ({ tag: tag.trim(), post: postId, user: userId })),
-        ]);
+      const formattedTags = tags.split(",").map((tag) => {
+        const trimmedTag = tag.trim();
+        return {
+          tag: trimmedTag.startsWith("#") ? trimmedTag.slice(1) : trimmedTag, // Remove "#" if present
+          post: postId,
+          user: userId,
+        };
+      });
+      const { data, error } = await supabase.from("tags").insert(formattedTags);
       if (error) {
         throw error;
       }
-      console.log("Tags inserted successfully:", data);
     } catch (error) {
       console.log("Error inserting tags:", error);
     }
   };
+
   const uploadImages = async (postId) => {
     try {
       for (let i = 0; i < medias.length; i++) {

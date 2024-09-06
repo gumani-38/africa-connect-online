@@ -89,32 +89,32 @@ const UpdatePostScreen = () => {
       if (error) {
         throw error;
       }
-
       // Map current tags from the database to a simple array of tag strings
       const currentTagNames = currentTags.map((tag) => tag.tag);
-
-      // Parse input tags
-      const inputTags = tags.split(",").map((tag) => tag.trim());
-
+      // Parse input tags and remove "#" if present
+      const inputTags = tags
+        .split(",")
+        .map((tag) =>
+          tag.trim().startsWith("#") ? tag.trim().slice(1) : tag.trim()
+        );
       // Find tags to be added
       const tagsToAdd = inputTags.filter(
         (tag) => !currentTagNames.includes(tag)
       );
-
       // Find tags to be removed
       const tagsToRemove = currentTagNames.filter(
         (tag) => !inputTags.includes(tag)
       );
-
       // Insert new tags
       for (let tag of tagsToAdd) {
         await supabase.from("tags").insert({ post: postId, tag });
       }
-
       // Remove old tags
       for (let tag of tagsToRemove) {
         await supabase.from("tags").delete().eq("post", postId).eq("tag", tag);
       }
+
+      console.log("Tags updated successfully");
     } catch (error) {
       console.error("Error updating tags: ", error.message);
     }

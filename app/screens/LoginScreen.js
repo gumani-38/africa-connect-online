@@ -34,7 +34,7 @@ const LoginScreen = () => {
   });
   useEffect(() => {
     getUser();
-  }, [user]);
+  }, [userId]);
   const getUser = async () => {
     const {
       data: { user },

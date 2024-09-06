@@ -239,7 +239,15 @@ const Feed = ({ item, userId, handlePresentModal }) => {
         <View style={{ flexDirection: "row", gap: 1, flexWrap: "wrap" }}>
           {tags.length > 0 &&
             tags.map((tag, index) => (
-              <Pressable key={tag.id}>
+              <Pressable
+                key={tag.id}
+                onPress={() =>
+                  navigation.navigate("ViewTag", {
+                    tagName: tag.tag,
+                    tagId: tag.id,
+                  })
+                }
+              >
                 <Text style={styles.tags}>
                   #{tag.tag}
                   {index < tags.length - 1 ? "," : ""}

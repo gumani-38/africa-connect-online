@@ -25,6 +25,7 @@ import UpdatePostScreen from "../screens/UpdatePostScreen";
 import ResetPasswordScreen from "../screens/ResetPasswordScreen";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import ViewPostScreen from "../screens/ViewPostScreen";
+import HashtagScreen from "../screens/HashtagScreen";
 
 const StackNavigation = () => {
   const Stack = createStackNavigator();
@@ -220,6 +221,11 @@ const StackNavigation = () => {
         <Stack.Screen
           name="ViewPost"
           component={ViewPostScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="ViewTag"
+          component={HashtagScreen}
           options={{ headerShown: false }}
         />
 
