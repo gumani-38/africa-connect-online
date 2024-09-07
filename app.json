@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "africa connect online",
-    "slug": "africa-connect-online",
+    "name": "afro connect",
+    "slug": "afro-connect",
     "version": "2.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
@@ -24,7 +24,7 @@
       },
       "permissions": ["android.permission.RECORD_AUDIO"],
       "package": "com.yourcompany.acoapp",
-      "versionCode": 2
+      "versionCode": 3
     },
     "web": {
       "favicon": "./app/assets/favicon.png"
@@ -44,7 +44,7 @@
         "origin": false
       },
       "eas": {
-        "projectId": "c8f5589e-3404-4e28-9220-1b7a9b144e2a"
+        "projectId": "369e9c1e-fde7-4d46-ae18-acfaa560abdb"
       }
     },
     "owner": "africaconnectonline"
